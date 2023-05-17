@@ -4,19 +4,48 @@ using UnityEngine;
 
 public class PresenterSettings : MonoBehaviour
 {
-    public bool renderDebugScreens = false;
+  public bool renderDebugScreens = false;
 
-    ActivateDisplays labLabActivateDisplays;
+  ActivateDisplays labLabActivateDisplays;
+  public List<GameObject> scenesList;
 
-    void Start()
-    {
-        labLabActivateDisplays = GameObject.FindObjectOfType<ActivateDisplays>();
-        labLabActivateDisplays.transform.GetChild(0).gameObject.SetActive(false);
+  int currentScene = 0;
+
+  void Awake()
+  {
+    labLabActivateDisplays = GameObject.FindObjectOfType<ActivateDisplays>();
+    if (!renderDebugScreens) {
+      labLabActivateDisplays.transform.GetChild(0).gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    SetScene();
+  }
+
+  void Update () {
+    if (Input.GetKeyUp(KeyCode.LeftArrow)) {
+        if (currentScene > 0) {
+            currentScene--;
+            SetScene();
+        }
     }
+    if (Input.GetKeyUp(KeyCode.RightArrow)) {
+        if (currentScene < scenesList.Count - 1) {
+            currentScene++;
+            SetScene();
+        }
+    }
+  }
+
+  void SetScene() {
+    int index = 0;
+    foreach (GameObject scene in scenesList) {
+      if (currentScene == index) {
+        scene.SetActive(true);
+      }
+      else {
+        scene.SetActive(false);
+      }
+      index++;
+    }
+  }
 }
