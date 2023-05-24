@@ -2,6 +2,11 @@
 Unity HDRP template with Vioso integration for the Lablab studio.
 Extended with a Presenter template with basic slide show, 360 player and 3D scene capability.
 
+## Requirements
+A powerful Windows PC is required to play the project.
+
+For Mac: The Projection Setup system doesn't compile on Mac, but technically there's nothing keeping you from working in the project, as long as a Windows PC is the one that test it.
+
 ## Installation
 
 1. Download or clone this project on your computer.
