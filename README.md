@@ -35,10 +35,9 @@ _Look in Scene 1 for inspiration_
 
 The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video.
 
-**To add a slideshow to a scene:** 
 1. From Assets/_Presenter/Prefabs, nest a "Slideshow" prefab under a "Scene" prefab.
 
-2. Add slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Up/Down arrows while the slideshow is visible.
+2. Add Image and Video slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Up/Down arrows while the slideshow is visible.
 
 **To add an image slide:**
 1. Import a 16:9 image somewhere into Assets/_Presenter/_Your Project
