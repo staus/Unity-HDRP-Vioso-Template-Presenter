@@ -14,7 +14,7 @@ Inside Assets/_Presenter/_Your Project there’s a scene file.
 
 If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 3 small scenes. Each scene demos a simple use case:
 
-1. Scene 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide :) Would be nice if you could let us know. (I put the Audio Listener on the position of the camera rig)
+1. Scene 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
 
 2. Scene 2: A simple 360 player. Should have some sound playing too.
 
