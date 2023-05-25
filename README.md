@@ -31,7 +31,7 @@ If you open and play that you should be able to use left/right arrow keys to go 
 
 2. Unfold the "---SETTINGS---" and "---SCENE---" objects in the scene hierarchy.
 
-3. To create a new scene, add a scene prefab from "Assets/_Presenter/Prefabs" and assign it in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the scenes will play in when using the Left/Right arrows. Anything nested under the scene prefab will be toggled on/off with the scenes object. You are not limited to slides or 60 videos. You can place anything there.
+3. To create a new scene, add a scene prefab from "Assets/_Presenter/Prefabs" and assign it in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the scenes will play in when using the Left/Right arrows. Anything nested under the scene prefab will be toggled on/off with the scenes object. You are not limited to slides or 360 videos. You can place anything there.
 
 
 
