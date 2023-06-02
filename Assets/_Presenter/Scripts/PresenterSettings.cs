@@ -7,9 +7,9 @@ public class PresenterSettings : MonoBehaviour
   public bool renderDebugScreens = false;
 
   ActivateDisplays labLabActivateDisplays;
-  public List<GameObject> scenesList;
+  public List<GameObject> chaptersList;
 
-  int currentScene = 0;
+  int currentChapter = 0;
 
   void Awake()
   {
@@ -18,32 +18,32 @@ public class PresenterSettings : MonoBehaviour
       labLabActivateDisplays.transform.GetChild(0).gameObject.SetActive(false);
     }
 
-    SetScene();
+    SetChapter();
   }
 
   void Update () {
     if (Input.GetKeyUp(KeyCode.LeftArrow)) {
-        if (currentScene > 0) {
-            currentScene--;
-            SetScene();
+        if (currentChapter > 0) {
+            currentChapter--;
+            SetChapter();
         }
     }
     if (Input.GetKeyUp(KeyCode.RightArrow)) {
-        if (currentScene < scenesList.Count - 1) {
-            currentScene++;
-            SetScene();
+        if (currentChapter < chaptersList.Count - 1) {
+            currentChapter++;
+            SetChapter();
         }
     }
   }
 
-  void SetScene() {
+  void SetChapter() {
     int index = 0;
-    foreach (GameObject scene in scenesList) {
-      if (currentScene == index) {
-        scene.SetActive(true);
+    foreach (GameObject chapter in chaptersList) {
+      if (currentChapter == index) {
+        chapter.SetActive(true);
       }
       else {
-        scene.SetActive(false);
+        chapter.SetActive(false);
       }
       index++;
     }

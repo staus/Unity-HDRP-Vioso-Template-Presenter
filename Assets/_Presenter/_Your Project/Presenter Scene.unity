@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5385261489918415926, guid: 2ba1744fbe99d364c87ac3a3cea71b36, type: 3}
       propertyPath: m_Name
-      value: Scene 2
+      value: Chapter 2
       objectReference: {fileID: 0}
     - target: {fileID: 5385261489918415926, guid: 2ba1744fbe99d364c87ac3a3cea71b36, type: 3}
       propertyPath: m_IsActive
@@ -737,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5385261489918415926, guid: 2ba1744fbe99d364c87ac3a3cea71b36, type: 3}
       propertyPath: m_Name
-      value: Scene 3
+      value: Chapter 3
       objectReference: {fileID: 0}
     - target: {fileID: 5385261489918415926, guid: 2ba1744fbe99d364c87ac3a3cea71b36, type: 3}
       propertyPath: m_IsActive
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderDebugScreens: 0
-  scenesList:
+  chaptersList:
   - {fileID: 4407778250492066453}
   - {fileID: 213962315}
   - {fileID: 658555909}
@@ -2430,7 +2430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5385261489918415926, guid: 2ba1744fbe99d364c87ac3a3cea71b36, type: 3}
       propertyPath: m_Name
-      value: Scene 1
+      value: Chapter 1
       objectReference: {fileID: 0}
     - target: {fileID: 5385261489918415926, guid: 2ba1744fbe99d364c87ac3a3cea71b36, type: 3}
       propertyPath: m_IsActive
