@@ -17,13 +17,13 @@ For Mac: The Projection Setup system doesn't compile on Mac, but technically the
 
 Inside Assets/_Presenter/_Your Project there’s a scene file.
 
-If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 3 small scenes. Each scene demos a simple use case:
+If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 3 small chapters. Each chapter demos a simple use case:
 
-1. Scene 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
+1. Chapter 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
 
-2. Scene 2: A simple 360 player. Should have some sound playing too.
+2. Chapter 2: A simple 360 player. Should have some sound playing too.
 
-3. Scene 3: A 3D scene with a timeline that should automatically animate the camera rig to first fly forward, then sideways and then forward and vertically up.
+3. Chapter 3: A 3D world with a timeline that should automatically animate the camera rig to first fly forward, then sideways and then forward and vertically up. It also contains volumetric clouds.
 
 
 ## Working with the presenter template
@@ -31,16 +31,16 @@ If you open and play that you should be able to use left/right arrow keys to go 
 
 2. Unfold the "---SETTINGS---" and "---SCENE---" objects in the scene hierarchy.
 
-3. To create a new scene, add a scene prefab from "Assets/_Presenter/Prefabs" and assign it in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the scenes will play in when using the Left/Right arrows. Anything nested under the scene prefab will be toggled on/off with the scenes object. You are not limited to slides or 360 videos. You can place anything there.
+3. To create a new chapter, add a Chapter prefab from "Assets/_Presenter/Prefabs" and assign it to the Chapter List in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the chapters will play in when using the Left/Right arrows. Anything nested under a Chapter prefab will be toggled on/off. You are not limited to slides or 360 videos. You can place anything there.
 
 
 
 ### Add a Slideshow
-_Look in Scene 1 for inspiration_
+_Look in Chapter 1 for inspiration_
 
 The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video.
 
-1. From Assets/_Presenter/Prefabs, nest a "Slideshow" prefab under a "Scene" prefab.
+1. From Assets/_Presenter/Prefabs, nest a "Slideshow" prefab under a "Chapter" prefab.
 
 2. Add Image and Video slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Up/Down arrows while the slideshow is visible.
 
@@ -61,7 +61,7 @@ The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video
 4. In the inspector for the VideoSlide assign the Media Reference you created before under Settings > Source > Media Reference.
 
 ### Add a 360 player
-_Look in Scene 2 for inspiration_
+_Look in Chapter 2 for inspiration_
 
 1. Place a 360 video in the Assets/StreamingAssets folder.
 
@@ -69,18 +69,18 @@ _Look in Scene 2 for inspiration_
 
 3. If your 360 video is in stereo, change the Stereo Packing setting to Top Bottom (It's usually this packing).
 
-4. From Assets/_Presenter/Prefabs, nest a "360 Player" prefab under a "Scene" prefab.
+4. From Assets/_Presenter/Prefabs, nest a "360 Player" prefab under a "Chapter" prefab.
 
 5. In the inspector for the 360 Player assign the Media Reference you created before under Settings > Source > Media Reference.
 
-### Add custom objects to a scene
-As mentioned earlier, anything can be placed inside a Scene prefab and will be toggled On/Off when Left/Right arrows. That said we made a few tools:
+### Add custom objects to a chapter
+As mentioned earlier, anything can be placed inside a Chapter prefab and will be toggled On/Off when using the Left/Right arrows. That said we made a few tools:
 
-**To add ambient sound to a scene**
+**To add ambient sound to a chapter**
 
 1. Import a stereo sound somewhere into Assets/_Presenter/_Your Project.
 
-2. From Assets/_Presenter/Prefabs nest the "Ambient Sound" prefab under a "Scene" prefab.
+2. From Assets/_Presenter/Prefabs nest the "Ambient Sound" prefab under a "Chapter" prefab.
 
 3. In the inspector, assign your imported sound to the Audio Source. The sound should sound like it's coming from all around.
 
@@ -88,19 +88,31 @@ As mentioned earlier, anything can be placed inside a Scene prefab and will be t
 
 1. Import a mono sound somewhere into Assets/_Presenter/_Your Project.
 
-2. From Assets/_Presenter/Prefabs nest the "Positional Sound" prefab under a "Scene" prefab. Place it where you would like the sound to come from.
+2. From Assets/_Presenter/Prefabs nest the "Positional Sound" prefab under a "Chapter" prefab. Place it where you would like the sound to come from.
 
 3. In the inspector, assign your imported sound to the Audio Source. The sound should sound like it's coming from a specific position.
 
 **To animate the camera movement**
 
-_Look in Scene 3 for inspiration_
+_Look in Chapter 3 for inspiration_
 
-1. From Assets/_Presenter/Prefabs, nest a "Timeline Camera" prefab under a "Scene" prefab.
+1. From Assets/_Presenter/Prefabs, nest a "Camera Positioner" prefab under a "Chapter" prefab.
 
-2. Animate the "Timeline Camera" position and rotation using whatever method you prefer, fx the build in Timeline system.
+2. Animate the "Camera Positioner" position and rotation using whatever method you prefer, fx the build in Timeline system.
 
-3. When the "Timeline Camera" changes position, it will automatically update the Projection Setup's camera rig.
+3. When the "Camera Positioner" changes position or rotation, it will automatically update the Projection Setup's camera rig. It will reset back to its default position when changing chapter.
+
+**To change cloud and ambience**
+
+_Look in Chapter 3 for inspiration_
+
+1. Each "Chapter" prefab contains a "Volume" component in the inspector.
+
+2. By default they are all assigned the same "Ambience Disabled" profile, but if you look inside Assets/_Presenter_Your Project/Ambience you will see another profile called "Clouds and Ambience".
+
+3. In any Chapter, if you replace the "Ambience Disabled" profile with "Clouds and Ambience" that chapter will get natural looking clouds.
+
+4. If you want to change the clouds, it's recommended to duplicate the "Clouds and Ambience" file and rename it to something else and then assign that. That way you can have many different clouds and ambience looks without running into problems with overwriting other chapters ambience.
 
 
 ### To debug the projection walls ###
