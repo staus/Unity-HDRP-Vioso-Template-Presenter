@@ -38,9 +38,11 @@ If you open and play that you should be able to use left/right arrow keys to go 
 
 1. Chapter 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
 
-2. Chapter 2: A simple 360 player. Should have some sound playing too.
+2. Chapter 2: A simple 360 image.
 
-3. Chapter 3: A 3D world with a timeline that should automatically animate the camera rig to first fly forward, then sideways and then forward and vertically up. It also contains volumetric clouds.
+3. Chapter 3: A simple 360 player. Should have some sound playing too.
+
+4. Chapter 4: A 3D world with a timeline that should automatically animate the camera rig to first fly forward, then sideways and then forward and vertically up. It also contains volumetric clouds.
 
 
 ## Working with the presenter template
@@ -96,6 +98,8 @@ _Look in Chapter 2 for inspiration_
 5. In the inspector for the "360 Image" prefab assign the image you imported to the "Texture 360" field.
 
 6. Optional: If you would like the 360 image to spin slowly, you can set a Rotation Speed in the inspector. Set i to 0 to disable it. By default it rotates horizontally around the Y axis, but feel free to pick a different axis.
+
+Tip: If you want to show many 360 images after each other, like a "360 slideshow", simply add them to each of their own chapter.
 
 
 ### Add a 360 video player
