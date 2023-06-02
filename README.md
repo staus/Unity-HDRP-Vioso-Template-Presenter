@@ -46,7 +46,7 @@ If you open and play that you should be able to use left/right arrow keys to go 
 ## Working with the presenter template
 1. Open the "Presenter Scene" file inside Assets/_Presenter/_Your Project.
 
-2. Unfold the "---SETTINGS---" and "---SCENE---" objects in the scene hierarchy. Add chapters here.
+2. Unfold the "---SETTINGS---" and "---CHAPTERS---" objects in the scene hierarchy. Add chapters here.
 
 ### Add a Chapter
 
