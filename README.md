@@ -34,7 +34,7 @@ For Mac: The Projection Setup system doesn't compile on Mac, but technically the
 
 Inside Assets/_Presenter/_Your Project there’s a scene file.
 
-If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 3 small chapters. Each chapter demos a simple use case:
+If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 4 small chapters. Each chapter demos a simple use case:
 
 1. Chapter 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
 
