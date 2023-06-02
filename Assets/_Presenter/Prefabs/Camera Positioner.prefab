@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1813144628040739699}
   - component: {fileID: 4923105044734725289}
   m_Layer: 0
-  m_Name: Timeline Camera
+  m_Name: Camera Positioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraAnimator : MonoBehaviour
+public class CameraPositioner : MonoBehaviour
 {
     GameObject projectorsCameras;
     Vector3 tempRotation;
