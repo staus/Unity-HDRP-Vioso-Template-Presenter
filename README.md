@@ -75,7 +75,9 @@ _Look in Chapter 2 for inspiration_
 
 4. From Assets/_Presenter/Prefabs, nest a "360 Image" prefab under a "Chapter" prefab in your scene.
 
-5. In the inspector for the 360 Image scroll to the bottom and unfold the Material and assign the 360 image to the texture field.
+5. In the inspector for the "360 Image" prefab assign the image you imported to the "Texture 360" field.
+
+6. Optional: If you would like the 360 image to spin slowly, you can set a Rotation Speed in the inspector. Set i to 0 to disable it. By default it rotates horizontally around the Y axis, but feel free to pick a different axis.
 
 
 ### Add a 360 video player
