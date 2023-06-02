@@ -1,22 +1,21 @@
-- [Unity-HDRP-Vioso-Template-Presenter](#unity-hdrp-vioso-template-presenter)
-  * [Requirements](#requirements)
-  * [Installation](#installation)
-  * [Testing the presenter template](#testing-the-presenter-template)
-  * [Working with the presenter template](#working-with-the-presenter-template)
-    + [Add a Slideshow](#add-a-slideshow)
-    + [Add a 360 image](#add-a-360-image)
-    + [Add a 360 video player](#add-a-360-video-player)
-    + [Add custom objects to a chapter](#add-custom-objects-to-a-chapter)
-    + [To debug the projection walls](#to-debug-the-projection-walls)
-  * [Manual Projection Setup Usage](#manual-projection-setup-usage)
-    + [ProjectionSetup prefab](#projectionsetup-prefab)
-    + [Game View setup](#game-view-setup)
-    + [Using the studio model](#using-the-studio-model)
-    + [Merging into your own project (optional)](#merging-into-your-own-project--optional-)
-
 # Unity-HDRP-Vioso-Template-Presenter
 Unity HDRP template with Vioso integration for the Lablab studio.
 Extended with a Presenter template with basic slide show, 360 player and 3D scene capability.
+
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Testing the presenter template](#testing-the-presenter-template)
+* [Working with the presenter template](#working-with-the-presenter-template)
+  + [Add a Slideshow](#add-a-slideshow)
+  + [Add a 360 image](#add-a-360-image)
+  + [Add a 360 video player](#add-a-360-video-player)
+  + [Add custom objects to a chapter](#add-custom-objects-to-a-chapter)
+  + [To debug the projection walls](#to-debug-the-projection-walls)
+* [Manual Projection Setup Usage](#manual-projection-setup-usage)
+  + [ProjectionSetup prefab](#projectionsetup-prefab)
+  + [Game View setup](#game-view-setup)
+  + [Using the studio model](#using-the-studio-model)
+  + [Merging into your own project (optional)](#merging-into-your-own-project--optional-)
 
 ## Requirements
 A powerful Windows PC is required to play the project.
