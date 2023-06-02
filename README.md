@@ -13,6 +13,7 @@ For Mac: The Projection Setup system doesn't compile on Mac, but technically the
 
 2. Download the Vioso calibration file [here](http://gofile.me/67omf/z4MSltLGp) and add it to the Assets/Plugins/Vioso/ folder.
 
+
 ## Testing the presenter template
 
 Inside Assets/_Presenter/_Your Project there’s a scene file.
@@ -33,6 +34,8 @@ If you open and play that you should be able to use left/right arrow keys to go 
 
 3. To create a new chapter, add a Chapter prefab from "Assets/_Presenter/Prefabs" and assign it to the Chapter List in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the chapters will play in when using the Left/Right arrows. Anything nested under a Chapter prefab will be toggled on/off. You are not limited to slides or 360 videos. You can place anything there.
 
+4. Whatever you do, the main rule to folllow is: Everything should be nested underneath a Chapter prefab. Nothing outside!
+
 
 
 ### Add a Slideshow
@@ -40,7 +43,7 @@ _Look in Chapter 1 for inspiration_
 
 The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video.
 
-1. From Assets/_Presenter/Prefabs, nest a "Slideshow" prefab under a "Chapter" prefab.
+1. From Assets/_Presenter/Prefabs, nest a "Slideshow" prefab under a "Chapter" prefab in your scene.
 
 2. Add Image and Video slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Up/Down arrows while the slideshow is visible.
 
@@ -60,8 +63,23 @@ The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video
 
 4. In the inspector for the VideoSlide assign the Media Reference you created before under Settings > Source > Media Reference.
 
-### Add a 360 player
+
+### Add a 360 image
 _Look in Chapter 2 for inspiration_
+
+1. Optional: Generate a 360 image using skybox.blockadelabs.com. Download it to your computer.
+
+2. Import a 360 image somewhere into Assets/_Presenter/_Your Project.
+
+3. In the image settings, change the Max Size to 8192.
+
+4. From Assets/_Presenter/Prefabs, nest a "360 Image" prefab under a "Chapter" prefab in your scene.
+
+5. In the inspector for the 360 Image scroll to the bottom and unfold the Material and assign the 360 image to the texture field.
+
+
+### Add a 360 video player
+_Look in Chapter 3 for inspiration_
 
 1. Place a 360 video in the Assets/StreamingAssets folder.
 
@@ -69,9 +87,10 @@ _Look in Chapter 2 for inspiration_
 
 3. If your 360 video is in stereo, change the Stereo Packing setting to Top Bottom (It's usually this packing).
 
-4. From Assets/_Presenter/Prefabs, nest a "360 Player" prefab under a "Chapter" prefab.
+4. From Assets/_Presenter/Prefabs, nest a "360 Player" prefab under a "Chapter" prefab in your scene.
 
 5. In the inspector for the 360 Player assign the Media Reference you created before under Settings > Source > Media Reference.
+
 
 ### Add custom objects to a chapter
 As mentioned earlier, anything can be placed inside a Chapter prefab and will be toggled On/Off when using the Left/Right arrows. That said we made a few tools:
@@ -80,7 +99,7 @@ As mentioned earlier, anything can be placed inside a Chapter prefab and will be
 
 1. Import a stereo sound somewhere into Assets/_Presenter/_Your Project.
 
-2. From Assets/_Presenter/Prefabs nest the "Ambient Sound" prefab under a "Chapter" prefab.
+2. From Assets/_Presenter/Prefabs nest the "Ambient Sound" prefab under a "Chapter" prefab in your scene.
 
 3. In the inspector, assign your imported sound to the Audio Source. The sound should sound like it's coming from all around.
 
@@ -94,9 +113,9 @@ As mentioned earlier, anything can be placed inside a Chapter prefab and will be
 
 **To animate the camera movement**
 
-_Look in Chapter 3 for inspiration_
+_Look in Chapter 4 for inspiration_
 
-1. From Assets/_Presenter/Prefabs, nest a "Camera Positioner" prefab under a "Chapter" prefab.
+1. From Assets/_Presenter/Prefabs, nest a "Camera Positioner" prefab under a "Chapter" prefab in your scene.
 
 2. Animate the "Camera Positioner" position and rotation using whatever method you prefer, fx the build in Timeline system.
 
@@ -104,7 +123,7 @@ _Look in Chapter 3 for inspiration_
 
 **To change cloud and ambience**
 
-_Look in Chapter 3 for inspiration_
+_Look in Chapter 4 for inspiration_
 
 1. Each "Chapter" prefab contains a "Volume" component in the inspector.
 
