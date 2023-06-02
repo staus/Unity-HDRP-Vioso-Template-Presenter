@@ -6,6 +6,7 @@ Extended with a Presenter template with basic slide show, 360 player and 3D scen
 * [Installation](#installation)
 * [Testing the presenter template](#testing-the-presenter-template)
 * [Working with the presenter template](#working-with-the-presenter-template)
+  + [Add a Chapter](#add-a-chapter)
   + [Add a Slideshow](#add-a-slideshow)
   + [Add a 360 image](#add-a-360-image)
   + [Add a 360 video player](#add-a-360-video-player)
@@ -45,11 +46,13 @@ If you open and play that you should be able to use left/right arrow keys to go 
 ## Working with the presenter template
 1. Open the "Presenter Scene" file inside Assets/_Presenter/_Your Project.
 
-2. Unfold the "---SETTINGS---" and "---SCENE---" objects in the scene hierarchy.
+2. Unfold the "---SETTINGS---" and "---SCENE---" objects in the scene hierarchy. Add chapters here.
 
-3. To create a new chapter, add a Chapter prefab from "Assets/_Presenter/Prefabs" and assign it to the Chapter List in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the chapters will play in when using the Left/Right arrows. Anything nested under a Chapter prefab will be toggled on/off. You are not limited to slides or 360 videos. You can place anything there.
+### Add a Chapter
 
-4. Whatever you do, the main rule to folllow is: Everything should be nested underneath a Chapter prefab. Nothing outside!
+1. To create a new chapter, add a Chapter prefab from "Assets/_Presenter/Prefabs" and assign it to the Chapter List in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the chapters will play in when using the Left/Right arrows. Anything nested under a Chapter prefab will be toggled on/off. You are not limited to slides or 360 videos. You can place anything there.
+
+2. Whatever you do, the main rule to folllow is: Everything should be nested underneath a Chapter prefab. Nothing outside!
 
 
 
