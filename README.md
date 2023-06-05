@@ -178,15 +178,17 @@ This is quite a niche need with a few places things can go wrong, so you might h
 
 5. In the inspector for both model and animation, set the Rig > Animation Type to "Humanoid" and apply.
 
-6. In the mocap folder, right click > Create > Animator Controller
+6. In the mocap folder, right click > Create > Animator Controller. Rename it.
 
 7. Double click the Animation Controller file and right click in the canvas area > Create State > Empty
 
-8. Select the New State and in the inspector where it says "Motion" assign the animation file (Note: it might be named something else than the animations fbx file. If you unfold the animation fbx in the Mocap folder you can see the real name of the animation file)
+8. Select the New State and in the inspector where it says "Motion" assign the animation file (Note: it might be named something else than the animation you downloaded. If you unfold the animation fbx in the Mocap folder you can see the real name of the animation file)
 
 9. Drag the Character into the scene view underneath a chapter.
 
 10. In the inspector, it should have an Animator component already. In the "Controller" field assign your newly created Animator Controller to it.
+
+Now your character should be animating with your custom mocap recording.
 
 
 
