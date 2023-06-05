@@ -2,6 +2,22 @@
 Unity HDRP template with Vioso integration for the Lablab studio.
 Extended with a Presenter template with basic slide show, 360 player and 3D scene capability.
 
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Testing the presenter template](#testing-the-presenter-template)
+* [Working with the presenter template](#working-with-the-presenter-template)
+  + [Add a Chapter](#add-a-chapter)
+  + [Add a Slideshow](#add-a-slideshow)
+  + [Add a 360 image](#add-a-360-image)
+  + [Add a 360 video player](#add-a-360-video-player)
+  + [Add custom objects to a chapter](#add-custom-objects-to-a-chapter)
+  + [To debug the projection walls](#to-debug-the-projection-walls)
+* [Manual Projection Setup Usage](#manual-projection-setup-usage)
+  + [ProjectionSetup prefab](#projectionsetup-prefab)
+  + [Game View setup](#game-view-setup)
+  + [Using the studio model](#using-the-studio-model)
+  + [Merging into your own project (optional)](#merging-into-your-own-project--optional-)
+
 ## Requirements
 A powerful Windows PC is required to play the project.
 
@@ -18,23 +34,27 @@ For Mac: The Projection Setup system doesn't compile on Mac, but technically the
 
 Inside Assets/_Presenter/_Your Project there’s a scene file.
 
-If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 3 small chapters. Each chapter demos a simple use case:
+If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 4 small chapters. Each chapter demos a simple use case:
 
 1. Chapter 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
 
-2. Chapter 2: A simple 360 player. Should have some sound playing too.
+2. Chapter 2: A simple 360 image.
 
-3. Chapter 3: A 3D world with a timeline that should automatically animate the camera rig to first fly forward, then sideways and then forward and vertically up. It also contains volumetric clouds.
+3. Chapter 3: A simple 360 player. Should have some sound playing too.
+
+4. Chapter 4: A 3D world with a timeline that should automatically animate the camera rig to first fly forward, then sideways and then forward and vertically up. It also contains volumetric clouds.
 
 
 ## Working with the presenter template
 1. Open the "Presenter Scene" file inside Assets/_Presenter/_Your Project.
 
-2. Unfold the "---SETTINGS---" and "---SCENE---" objects in the scene hierarchy.
+2. Unfold the "---SETTINGS---" and "---CHAPTERS---" objects in the scene hierarchy. Add chapters here.
 
-3. To create a new chapter, add a Chapter prefab from "Assets/_Presenter/Prefabs" and assign it to the Chapter List in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the chapters will play in when using the Left/Right arrows. Anything nested under a Chapter prefab will be toggled on/off. You are not limited to slides or 360 videos. You can place anything there.
+### Add a Chapter
 
-4. Whatever you do, the main rule to folllow is: Everything should be nested underneath a Chapter prefab. Nothing outside!
+1. To create a new chapter, add a Chapter prefab from "Assets/_Presenter/Prefabs" and assign it to the Chapter List in the "Presenter Settings" object. The order in "Presenter Settings" defines the order the chapters will play in when using the Left/Right arrows. Anything nested under a Chapter prefab will be toggled on/off. You are not limited to slides or 360 videos. You can place anything there.
+
+2. Whatever you do, the main rule to folllow is: Everything should be nested underneath a Chapter prefab. Nothing outside!
 
 
 
@@ -75,7 +95,11 @@ _Look in Chapter 2 for inspiration_
 
 4. From Assets/_Presenter/Prefabs, nest a "360 Image" prefab under a "Chapter" prefab in your scene.
 
-5. In the inspector for the 360 Image scroll to the bottom and unfold the Material and assign the 360 image to the texture field.
+5. In the inspector for the "360 Image" prefab assign the image you imported to the "Texture 360" field.
+
+6. Optional: If you would like the 360 image to spin slowly, you can set a Rotation Speed in the inspector. Set i to 0 to disable it. By default it rotates horizontally around the Y axis, but feel free to pick a different axis.
+
+Tip: If you want to show many 360 images after each other, like a "360 slideshow", simply add them to each of their own chapter.
 
 
 ### Add a 360 video player
