@@ -2,21 +2,26 @@
 Unity HDRP template with Vioso integration for the Lablab studio.
 Extended with a Presenter template with basic slide show, 360 player and 3D scene capability.
 
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Testing the presenter template](#testing-the-presenter-template)
-* [Working with the presenter template](#working-with-the-presenter-template)
-  + [Add a Chapter](#add-a-chapter)
-  + [Add a Slideshow](#add-a-slideshow)
-  + [Add a 360 image](#add-a-360-image)
-  + [Add a 360 video player](#add-a-360-video-player)
-  + [Add custom objects to a chapter](#add-custom-objects-to-a-chapter)
-  + [To debug the projection walls](#to-debug-the-projection-walls)
-* [Manual Projection Setup Usage](#manual-projection-setup-usage)
-  + [ProjectionSetup prefab](#projectionsetup-prefab)
-  + [Game View setup](#game-view-setup)
-  + [Using the studio model](#using-the-studio-model)
-  + [Merging into your own project (optional)](#merging-into-your-own-project--optional-)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Testing the presenter template](#testing-the-presenter-template)
+- [Working with the presenter template](#working-with-the-presenter-template)
+  * [Add a Chapter](#add-a-chapter)
+  * [Add a Slideshow](#add-a-slideshow)
+  * [Add a 360 image](#add-a-360-image)
+  * [Add a 360 video player](#add-a-360-video-player)
+  * [Add custom objects to a chapter](#add-custom-objects-to-a-chapter)
+    + [To add ambient sound to a chapter](#to-add-ambient-sound-to-a-chapter)
+    + [To add positional sound to a scene](#to-add-positional-sound-to-a-scene)
+    + [To animate the camera movement](#to-animate-the-camera-movement)
+    + [To change cloud and ambience](#to-change-cloud-and-ambience)
+    + [To import Mocap animations to a character](#to-import-mocap-animations-to-a-character)
+  * [To debug the projection walls](#to-debug-the-projection-walls)
+- [Manual Projection Setup Usage](#manual-projection-setup-usage)
+  * [ProjectionSetup prefab](#projectionsetup-prefab)
+  * [Game View setup](#game-view-setup)
+  * [Using the studio model](#using-the-studio-model)
+  * [Merging into your own project (optional)](#merging-into-your-own-project--optional-)
 
 ## Requirements
 A powerful Windows PC is required to play the project.
@@ -119,7 +124,7 @@ _Look in Chapter 3 for inspiration_
 ### Add custom objects to a chapter
 As mentioned earlier, anything can be placed inside a Chapter prefab and will be toggled On/Off when using the Left/Right arrows. That said we made a few tools:
 
-**To add ambient sound to a chapter**
+#### To add ambient sound to a chapter
 
 1. Import a stereo sound somewhere into Assets/_Presenter/_Your Project.
 
@@ -127,7 +132,7 @@ As mentioned earlier, anything can be placed inside a Chapter prefab and will be
 
 3. In the inspector, assign your imported sound to the Audio Source. The sound should sound like it's coming from all around.
 
-**To add positional sound to a scene**
+#### To add positional sound to a scene
 
 1. Import a mono sound somewhere into Assets/_Presenter/_Your Project.
 
@@ -135,7 +140,7 @@ As mentioned earlier, anything can be placed inside a Chapter prefab and will be
 
 3. In the inspector, assign your imported sound to the Audio Source. The sound should sound like it's coming from a specific position.
 
-**To animate the camera movement**
+#### To animate the camera movement
 
 _Look in Chapter 4 for inspiration_
 
@@ -145,7 +150,7 @@ _Look in Chapter 4 for inspiration_
 
 3. When the "Camera Positioner" changes position or rotation, it will automatically update the Projection Setup's camera rig. It will reset back to its default position when changing chapter.
 
-**To change cloud and ambience**
+#### To change cloud and ambience
 
 _Look in Chapter 4 for inspiration_
 
@@ -157,8 +162,35 @@ _Look in Chapter 4 for inspiration_
 
 4. If you want to change the clouds, it's recommended to duplicate the "Clouds and Ambience" file and rename it to something else and then assign that. That way you can have many different clouds and ambience looks without running into problems with overwriting other chapters ambience.
 
+#### To import Mocap animations to a character
 
-### To debug the projection walls ###
+_Look in Chapter 4 for inspiration_
+
+This is quite a niche need with a few places things can go wrong, so you might have to troubleshoot some things on the way, but this could be one way to assign a Mocap recording:
+
+1. You need two things: A recording (.fbx) and a rigged character (.fbx).
+
+2. The recording can come from many places. Custom or generic. You can find generic ones to download for free from Mixamo.com.
+
+3. The Character model needs a rigged skeleton. It's recommended to use a generic one from fx. Mixamo.com.
+
+4. When you have your model and animation fbx files import both into Assets/_Presenter/_Your Project/Mocap
+
+5. In the inspector for both model and animation, set the Rig > Animation Type to "Humanoid" and apply.
+
+6. In the mocap folder, right click > Create > Animator Controller
+
+7. Double click the Animation Controller file and right click in the canvas area > Create State > Empty
+
+8. Select the New State and in the inspector where it says "Motion" assign the animation file (Note: it might be named something else than the animations fbx file. If you unfold the animation fbx in the Mocap folder you can see the real name of the animation file)
+
+9. Drag the Character into the scene view underneath a chapter.
+
+10. In the inspector, it should have an Animator component already. In the "Controller" field assign your newly created Animator Controller to it.
+
+
+
+### To debug the projection walls
 By default, when you press play, the projection walls are disabled.
 
 If you want to preview them while the scene plays, for debug purposes, select the "Presenter Settings" object in the hierarchy and toggle on "Render Debug Screens"
