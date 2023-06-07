@@ -37,6 +37,8 @@ For Mac: The Projection Setup system doesn't compile on Mac, but technically the
 
 2. Download the Vioso calibration file [here](http://gofile.me/67omf/z4MSltLGp) and add it to the Assets/Plugins/Vioso/ folder.
 
+3. To configure your window layout to an optimal one for this cave setup: In the top right corner of Unity click the dropdown click "Load Layout from File..." and select the "EUCL default.wtl" file. This should make it easy to see a first person camera view when you press play + see the cave projection cameras + sets a Timeline, Animation and Animator window.
+
 
 ## Testing the presenter template
 
