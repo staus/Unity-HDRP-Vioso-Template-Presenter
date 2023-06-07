@@ -8,11 +8,14 @@ Extended with a Presenter template with basic slide show, 360 player and 3D scen
 - [Working with the presenter template](#working-with-the-presenter-template)
   * [Add a Chapter](#add-a-chapter)
   * [Add a Slideshow](#add-a-slideshow)
+    + [To add an image slide:](#to-add-an-image-slide-)
+    + [To add a video slide:](#to-add-a-video-slide-)
   * [Add a 360 image](#add-a-360-image)
   * [Add a 360 video player](#add-a-360-video-player)
   * [Add custom objects to a chapter](#add-custom-objects-to-a-chapter)
     + [To add ambient sound to a chapter](#to-add-ambient-sound-to-a-chapter)
     + [To add positional sound to a scene](#to-add-positional-sound-to-a-scene)
+    + [To animate an objects position and rotation](#to-animate-an-objects-position-and-rotation)
     + [To animate the camera movement](#to-animate-the-camera-movement)
     + [To change cloud and ambience](#to-change-cloud-and-ambience)
     + [To import Mocap animations to a character](#to-import-mocap-animations-to-a-character)
@@ -39,15 +42,15 @@ For Mac: The Projection Setup system doesn't compile on Mac, but technically the
 
 Inside Assets/_Presenter/_Your Project there’s a scene file.
 
-If you open and play that you should be able to use left/right arrow keys to go forward/backwards in 4 small chapters. Each chapter demos a simple use case:
+If you open and play that you should be able to use left/right arrow keys to go forward/backwards in through 4 small chapters with slides and timelines in them. Use up/down to skip chapters. Each chapter demos a simple use case:
 
-1. Chapter 1: A basic slideshow on a black background. Use down/up arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
+1. Chapter 1: A basic slideshow on a black background. Use left/right arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
 
 2. Chapter 2: A simple 360 image.
 
 3. Chapter 3: A simple 360 player. Should have some sound playing too.
 
-4. Chapter 4: A 3D world with a timeline that should automatically animate the camera rig to first fly forward, then sideways and then forward and vertically up. It also contains volumetric clouds.
+4. Chapter 4: A 3D world with 2 timelines. It starts in a paused state, but by pressing right, the first timeline plays (animates the camera position + enables a dancinc character). Press right again and the current timeline jumps to its end and the next timeline plays (a simple cube animating its position on top of a building). It also contains volumetric clouds and grading.
 
 
 ## Working with the presenter template
@@ -61,6 +64,8 @@ If you open and play that you should be able to use left/right arrow keys to go 
 
 2. Whatever you do, the main rule to folllow is: Everything should be nested underneath a Chapter prefab. Nothing outside!
 
+3. Using Down/Up you can skip chapters (Left/right will go through both chapters and slides/timelines)
+
 
 
 ### Add a Slideshow
@@ -70,23 +75,21 @@ The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video
 
 1. From Assets/_Presenter/Prefabs, nest a "Slideshow" prefab under a "Chapter" prefab in your scene.
 
-2. Add Image and Video slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Up/Down arrows while the slideshow is visible.
+2. Add Image and Video slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Left/Right arrows while the slideshow is visible.
 
-**To add an image slide:**
+#### To add an image slide:
 1. Import a 16:9 image somewhere into Assets/_Presenter/_Your Project
 
 2. From Assets/_Presenter/Prefabs, nest a "SlideShow ImageSlide" prefab under the "Add slides under this" element in a "Slideshow" prefab.
 
 3. Assign the imported image to the "SlideShow ImageSlide" texture field in the inspector.
 
-**To add a video slide:**
-1. Place a 16:9 video in the Assets/StreamingAssets folder.
+#### To add a video slide:
+1. Place a 16:9 video in the Assets/_Presenter/_Your Project/Video folder.
 
-2. Open Assets/_Presenter/_Your Project/Video and duplicate the "Mandalorian Video" media reference and rename it. Then while having it selected, in the inspector change the Media Reference to be the exact same name of the video file in the streamingAssets folder.
+2. From Assets/_Presenter/Prefabs, nest a "SlideShow VideoSlide" prefab under the "Add slides under this" element in a "Slideshow" prefab.
 
-3. From Assets/_Presenter/Prefabs, nest a "SlideShow VideoSlide" prefab under the "Add slides under this" element in a "Slideshow" prefab.
-
-4. In the inspector for the VideoSlide assign the Media Reference you created before under Settings > Source > Media Reference.
+3. In the inspector for the VideoSlide, in the Media Player section click the little folder icon and select Browse and select your imported video.
 
 
 ### Add a 360 image
@@ -94,9 +97,9 @@ _Look in Chapter 2 for inspiration_
 
 1. Optional: Generate a 360 image using skybox.blockadelabs.com. Download it to your computer.
 
-2. Import a 360 image somewhere into Assets/_Presenter/_Your Project.
+2. Import a 360 image in the Assets/_Presenter/_Your Project/Images folder.
 
-3. In the image settings, change the Max Size to 8192.
+3. In the image settings for the imported image, change the Max Size to 8192.
 
 4. From Assets/_Presenter/Prefabs, nest a "360 Image" prefab under a "Chapter" prefab in your scene.
 
@@ -110,15 +113,11 @@ Tip: If you want to show many 360 images after each other, like a "360 slideshow
 ### Add a 360 video player
 _Look in Chapter 3 for inspiration_
 
-1. Place a 360 video in the Assets/StreamingAssets folder.
+1. Place a 360 video in the Assets/_Presenter/_Your Project/Video folder.
 
-2. Open Assets/_Presenter/_Your Project/Video and duplicate the "Mandalorian Video" media reference and rename it. Then while having it selected, in the inspector change the Media Reference to be the exact same name of the video file in the streamingAssets folder.
+2. From Assets/_Presenter/Prefabs, nest a "360 Player" prefab under a "Chapter" prefab in your scene.
 
-3. If your 360 video is in stereo, change the Stereo Packing setting to Top Bottom (It's usually this packing).
-
-4. From Assets/_Presenter/Prefabs, nest a "360 Player" prefab under a "Chapter" prefab in your scene.
-
-5. In the inspector for the 360 Player assign the Media Reference you created before under Settings > Source > Media Reference.
+3. In the inspector for the 360 Player, in the Media Player section click the little folder icon and select Browse and select your imported video.
 
 
 ### Add custom objects to a chapter
@@ -140,15 +139,35 @@ As mentioned earlier, anything can be placed inside a Chapter prefab and will be
 
 3. In the inspector, assign your imported sound to the Audio Source. The sound should sound like it's coming from a specific position.
 
+#### To animate an objects position and rotation
+
+_Look in Chapter 4 for inspiration_
+
+1. Add the object you  to the scene. Fx a cube.
+
+2. From Assets/_Presenter/Prefabs, nest a "Timeline Collection" prefab under a "Chapter" prefab in your scene.
+
+3. Right click the prefab and select "Create Empty"
+
+4. Open the "Timeline" window fromt the top toolbar: Window > Sequencing > Timeline
+
+5. The timeline window should have a "Create" button. Click it and save your new timeline inside Assets/_Presenter/_Your Project/Timelines
+
+6. With the timeline window open, drag the object you want to animate into the left field and select "Add Animation Track"
+
+7. Enable the red recorder button and move and rotate your object to animate its position
+
+8. Move the timeline cursor to a different position and move your object to where you'd want it at this time.
+
+Tip: You when you dragged in your object you could also have chosen "Add Activation Track". This would allow you to turn objects on/off at any given point in the timeline.
+
 #### To animate the camera movement
 
 _Look in Chapter 4 for inspiration_
 
 1. From Assets/_Presenter/Prefabs, nest a "Camera Positioner" prefab under a "Chapter" prefab in your scene.
 
-2. Animate the "Camera Positioner" position and rotation using whatever method you prefer, fx the build in Timeline system.
-
-3. When the "Camera Positioner" changes position or rotation, it will automatically update the Projection Setup's camera rig. It will reset back to its default position when changing chapter.
+2. Animate the "Camera Positioner" like you'd animate any other object (see chapter above)
 
 #### To change cloud and ambience
 
@@ -156,11 +175,11 @@ _Look in Chapter 4 for inspiration_
 
 1. Each "Chapter" prefab contains a "Volume" component in the inspector.
 
-2. By default they are all assigned the same "Ambience Disabled" profile, but if you look inside Assets/_Presenter_Your Project/Ambience you will see another profile called "Clouds and Ambience".
+2. By default they are all not assigned a profile, but if you look inside Assets/_Presenter/_Your Project/Ambience you will see another profile called "Clouds and Ambience".
 
-3. In any Chapter, if you replace the "Ambience Disabled" profile with "Clouds and Ambience" that chapter will get natural looking clouds.
+3. Duplicate the "Clouds and Ambience" file every time you would like to have ambience in a Chapter
 
-4. If you want to change the clouds, it's recommended to duplicate the "Clouds and Ambience" file and rename it to something else and then assign that. That way you can have many different clouds and ambience looks without running into problems with overwriting other chapters ambience.
+4. In any Chapter, if you replace set the profile to your "Clouds and Ambience" duplicate that chapter will get natural looking clouds and you can now adjust settings that will only affect this chapter.
 
 #### To import Mocap animations to a character
 
