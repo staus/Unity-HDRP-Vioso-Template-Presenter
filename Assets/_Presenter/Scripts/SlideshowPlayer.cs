@@ -34,7 +34,7 @@ public class SlideshowPlayer : MonoBehaviour
         }
     }
     void SetSlide() {
-        LockChapterUpDownNavigation();
+        LockChapterLeftRightNavigation();
         int index = 0;
         foreach (GameObject slide in slidesList) {
             if (currentSlide == index) {
@@ -47,7 +47,7 @@ public class SlideshowPlayer : MonoBehaviour
         }
     }
 
-    void LockChapterUpDownNavigation() {
+    void LockChapterLeftRightNavigation() {
         if (currentSlide == 0) {
             // Allow for going backwards using arrow up/down
             parentChapter.lockPreviousChapter = false;
