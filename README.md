@@ -159,6 +159,8 @@ _Look in Chapter 4 for inspiration_
 
 8. Move the timeline cursor to a different position and move your object to where you'd want it at this time.
 
+Tip: You can create and add as many timelines as you want underneath the Timeline Collection. It will automatically let the user go through them using left/right keys.
+
 Tip: You when you dragged in your object you could also have chosen "Add Activation Track". This would allow you to turn objects on/off at any given point in the timeline.
 
 #### To animate the camera movement
