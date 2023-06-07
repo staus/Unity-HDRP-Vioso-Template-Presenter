@@ -8,8 +8,8 @@ Extended with a Presenter template with basic slide show, 360 player and 3D scen
 - [Working with the presenter template](#working-with-the-presenter-template)
   * [Add a Chapter](#add-a-chapter)
   * [Add a Slideshow](#add-a-slideshow)
-    + [To add an image slide:](#to-add-an-image-slide-)
-    + [To add a video slide:](#to-add-a-video-slide-)
+    + [To add an image slide](#to-add-an-image-slide)
+    + [To add a video slide](#to-add-a-video-slide)
   * [Add a 360 image](#add-a-360-image)
   * [Add a 360 video player](#add-a-360-video-player)
   * [Add custom objects to a chapter](#add-custom-objects-to-a-chapter)
@@ -77,14 +77,14 @@ The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video
 
 2. Add Image and Video slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Left/Right arrows while the slideshow is visible.
 
-#### To add an image slide:
+#### To add an image slide
 1. Import a 16:9 image somewhere into Assets/_Presenter/_Your Project
 
 2. From Assets/_Presenter/Prefabs, nest a "SlideShow ImageSlide" prefab under the "Add slides under this" element in a "Slideshow" prefab.
 
 3. Assign the imported image to the "SlideShow ImageSlide" texture field in the inspector.
 
-#### To add a video slide:
+#### To add a video slide
 1. Place a 16:9 video in the Assets/_Presenter/_Your Project/Video folder.
 
 2. From Assets/_Presenter/Prefabs, nest a "SlideShow VideoSlide" prefab under the "Add slides under this" element in a "Slideshow" prefab.
