@@ -7,7 +7,7 @@ public class PresenterSettings : MonoBehaviour
   public bool renderDebugScreens = false;
 
   ActivateDisplays labLabActivateDisplays;
-  public List<GameObject> chaptersList;
+  public List<ChapterSettings> chaptersList;
 
   int currentChapter = 0;
 
@@ -22,28 +22,47 @@ public class PresenterSettings : MonoBehaviour
   }
 
   void Update () {
+    if (Input.GetKeyUp(KeyCode.UpArrow)) {
+      PreviousChapter();
+    }
+    if (Input.GetKeyUp(KeyCode.DownArrow)) {
+      NextChapter();
+    }
+
     if (Input.GetKeyUp(KeyCode.LeftArrow)) {
-        if (currentChapter > 0) {
-            currentChapter--;
-            SetChapter();
-        }
+      if (!chaptersList[currentChapter].lockPreviousChapter){
+        PreviousChapter();
+      }
     }
     if (Input.GetKeyUp(KeyCode.RightArrow)) {
-        if (currentChapter < chaptersList.Count - 1) {
-            currentChapter++;
-            SetChapter();
-        }
+      if (!chaptersList[currentChapter].lockNextChapter){
+        NextChapter();
+      }
+    }
+  }
+
+  void PreviousChapter() {
+    if (currentChapter > 0) {
+      currentChapter--;
+      SetChapter();
+    }
+  }
+
+  void NextChapter() {
+    if (currentChapter < chaptersList.Count - 1) {
+      currentChapter++;
+      SetChapter();
     }
   }
 
   void SetChapter() {
     int index = 0;
-    foreach (GameObject chapter in chaptersList) {
+    foreach (ChapterSettings chapter in chaptersList) {
       if (currentChapter == index) {
-        chapter.SetActive(true);
+        chapter.gameObject.SetActive(true);
       }
       else {
-        chapter.SetActive(false);
+        chapter.gameObject.SetActive(false);
       }
       index++;
     }
