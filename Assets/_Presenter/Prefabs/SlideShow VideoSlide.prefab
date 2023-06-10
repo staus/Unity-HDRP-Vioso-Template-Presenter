@@ -60,11 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638c870cac4da414fba921606d504407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mediaSource: 0
+  _mediaSource: 1
   _mediaReference: {fileID: 0}
   _mediaPath:
-    _pathType: 0
-    _path: 
+    _pathType: 2
+    _path: The Mandalorian Behind the Scenes.mp4
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
