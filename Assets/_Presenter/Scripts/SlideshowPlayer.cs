@@ -16,25 +16,24 @@ public class SlideshowPlayer : MonoBehaviour
         foreach (Transform slide in canvas) {
             slidesList.Add (slide.gameObject);
         }
-        SetSlide();
+        StartCoroutine(SetSlide());
     }
 
     void Update () {
         if (Input.GetKeyUp(KeyCode.LeftArrow)) {
             if (currentSlide > 0) {
                 currentSlide--;
-                SetSlide();
+                StartCoroutine(SetSlide());
             }
         }
         if (Input.GetKeyUp(KeyCode.RightArrow)) {
             if (currentSlide < slidesList.Count - 1) {
                 currentSlide++;
-                SetSlide();
+                StartCoroutine(SetSlide());
             }
         }
     }
-    void SetSlide() {
-        LockChapterLeftRightNavigation();
+    IEnumerator SetSlide(bool waitFrame = false) {
         int index = 0;
         foreach (GameObject slide in slidesList) {
             if (currentSlide == index) {
@@ -45,6 +44,10 @@ public class SlideshowPlayer : MonoBehaviour
             }
             index++;
         }
+
+        // Wait one frame before unlocking / locking chapter
+        yield return null;
+        LockChapterLeftRightNavigation();
     }
 
     void LockChapterLeftRightNavigation() {
