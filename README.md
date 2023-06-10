@@ -48,11 +48,11 @@ If you open and play that you should be able to use left/right arrow keys to go 
 
 1. Chapter 1: A basic slideshow on a black background. Use left/right arrows to go forward/backwards in the slides. There should also be general ambient sound playing. One of the slides should be a video with sound source. The source should somewhat sound like it comes from the position of the slide.
 
-2. Chapter 2: A simple 360 image.
+2. Chapter 2: A simple 360 image. Should have some sound playing too.
 
-3. Chapter 3: A simple 360 player. Should have some sound playing too.
+3. Chapter 3: A simple 360 player.
 
-4. Chapter 4: A 3D world with 2 timelines. It starts in a paused state, but by pressing right, the first timeline plays (animates the camera position + enables a dancinc character). Press right again and the current timeline jumps to its end and the next timeline plays (a simple cube animating its position on top of a building). It also contains volumetric clouds and grading.
+4. Chapter 4: A 3D world with 2 timelines. It also contains volumetric clouds and grading. It starts in a paused state, but by pressing right, the first timeline plays (animates the camera position + enables a dancinc character). Press right again and the current timeline jumps to its end and the next timeline plays (a simple cube animating its position on top of a building). 
 
 
 ## Working with the presenter template
@@ -80,18 +80,18 @@ The slideshow system is simple. It's either a 16:9 image texture or a 16:9 video
 2. Add Image and Video slides under the "Add slides under this" element. The order of slides in the hierarchy defines the order the slides will appear when using the Left/Right arrows while the slideshow is visible.
 
 #### To add an image slide
-1. Import a 16:9 image somewhere into Assets/_Presenter/_Your Project
+1. Import a 16:9 image into Assets/_Presenter/_Your Project/Slides
 
 2. From Assets/_Presenter/Prefabs, nest a "SlideShow ImageSlide" prefab under the "Add slides under this" element in a "Slideshow" prefab.
 
 3. Assign the imported image to the "SlideShow ImageSlide" texture field in the inspector.
 
 #### To add a video slide
-1. Place a 16:9 video in the Assets/_Presenter/_Your Project/Video folder.
+1. Place a 16:9 video in the Assets/StreamingAssets folder. !!Important!! It has to be in this folder!
 
 2. From Assets/_Presenter/Prefabs, nest a "SlideShow VideoSlide" prefab under the "Add slides under this" element in a "Slideshow" prefab.
 
-3. In the inspector for the VideoSlide, in the Media Player section click the little folder icon and select Browse and select your imported video.
+3. In the inspector for the VideoSlide, in the Media Player section click the little folder icon and select StreamingAssets and select your imported video.
 
 
 ### Add a 360 image
@@ -99,15 +99,17 @@ _Look in Chapter 2 for inspiration_
 
 1. Optional: Generate a 360 image using skybox.blockadelabs.com. Download it to your computer.
 
-2. Import a 360 image in the Assets/_Presenter/_Your Project/Images folder.
+2. Import a 360 image in the Assets/_Presenter/_Your Project/360 Images folder.
 
-3. In the image settings for the imported image, change the Max Size to 8192.
+3. In the same folder, duplicate an existing material and rename it to the same name as your texture and assign the texture to the material in the inspector.
 
-4. From Assets/_Presenter/Prefabs, nest a "360 Image" prefab under a "Chapter" prefab in your scene.
+4. In the image settings for the imported image, change the Max Size to 8192.
 
-5. In the inspector for the "360 Image" prefab assign the image you imported to the "Texture 360" field.
+5. From Assets/_Presenter/Prefabs, nest a "360 Image" prefab under a "Chapter" prefab in your scene.
 
-6. Optional: If you would like the 360 image to spin slowly, you can set a Rotation Speed in the inspector. Set i to 0 to disable it. By default it rotates horizontally around the Y axis, but feel free to pick a different axis.
+6. In the inspector for the "360 Image" prefab assign the Material you created to the Materials list of the Mesh Renderer.
+
+7. Optional: If you would like the 360 image to spin slowly, you can set a Rotation Speed in the inspector. Set it to 0 to disable it. By default it rotates horisontally around the Y axis, but feel free to pick a different axis.
 
 Tip: If you want to show many 360 images after each other, like a "360 slideshow", simply add them to each of their own chapter.
 
@@ -115,11 +117,11 @@ Tip: If you want to show many 360 images after each other, like a "360 slideshow
 ### Add a 360 video player
 _Look in Chapter 3 for inspiration_
 
-1. Place a 360 video in the Assets/_Presenter/_Your Project/Video folder.
+1. Place a 360 video in the Assets/StreamingAssets folder. !!Important!! It has to be in this folder!
 
 2. From Assets/_Presenter/Prefabs, nest a "360 Player" prefab under a "Chapter" prefab in your scene.
 
-3. In the inspector for the 360 Player, in the Media Player section click the little folder icon and select Browse and select your imported video.
+3. In the inspector for the 360 Player, in the Media Player section click the little folder icon and select StreamingAssets and select your imported video.
 
 
 ### Add custom objects to a chapter
