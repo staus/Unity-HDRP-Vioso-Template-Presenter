@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Demo-360
+  m_Name: 360 Video
   m_Shader: {fileID: 4800000, guid: 46b84ca7ab6291e4fb6c57ac48d01e8f, type: 3}
   m_ShaderKeywords: FORCEEYE_NONE LAYOUT_NONE STEREO_NONE
   m_LightmapFlags: 4

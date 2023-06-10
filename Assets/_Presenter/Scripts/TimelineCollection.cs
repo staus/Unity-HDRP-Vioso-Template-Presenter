@@ -25,6 +25,7 @@ public class TimelineCollection : MonoBehaviour
         ResetTimelines();
     }
     void ResetTimelines() {
+        LockChapterLeftRightNavigation();
         for(int i = 0; i < timelines.Length; i++) {
             timelines[i].playOnAwake = false;
             timelines[i].Stop();
