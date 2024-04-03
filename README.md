@@ -29,13 +29,13 @@ Extended with a Presenter template with basic slide show, 360 player and 3D scen
 ## Requirements
 A powerful Windows PC is required to play the project.
 
-For Mac: The Projection Setup system doesn't compile on Mac, but technically there's nothing keeping you from working in the project, as long as a Windows PC is the one that test it.
+For Mac: The Projection Setup system doesn't compile on Mac and you will see a lot of errors in the Unity console when you test locally, but technically there's nothing keeping you from working in the project on a Mac, as long as a Windows PC is the one that runs the project in the actual projector cave.
 
 ## Installation
 
 1. Download or clone this project on your computer.
 
-2. Download the Vioso calibration file [here](http://gofile.me/67omf/z4MSltLGp) and add it to the Assets/Plugins/Vioso/ folder.
+2. Download the Vioso calibration file [here](https://gofile.me/67omf/2v5fKJKft) and add it to the Assets/Plugins/Vioso/ folder.
 
 3. To configure your window layout to an optimal one for this cave setup: In the top right corner of Unity click the dropdown click "Load Layout from File..." and select the "EUCL default.wtl" file. This should make it easy to see a first person camera view when you press play + see the cave projection cameras + sets a Timeline, Animation and Animator window.
 
